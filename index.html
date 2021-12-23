@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>BLACK PEARL CARD</title>
+    <link rel="stylesheet" href="style/splide.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="card_page">
+        <header>
+            <div class="page_content">
+                <a class="logo" href="index.html">
+                    <img alt="logo" src="img/logo.png">
+                    BLACK PEARL CARD
+                </a>
+                <div class="menu">
+                    <a href="" class="menu_item">Sign-up</a>
+                    <a href="" class="menu_item">Login</a>
+                    <a href="" class="menu_item">Check card balance</a>
+                </div>
+            </div>
+            <div class="mobile_menu">
+                <input id="burger" type="checkbox" />
+
+                <label for="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <nav>
+                    <ul>
+                        <li><a href="" class="menu_item">Sign-up</a></li>
+                        <li><a href="" class="menu_item">Login</a></li>
+                        <li><a href="" class="menu_item">Check card balance</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="main">
+            <div class="slider_section">
+                <div class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="slider_content show">
+                                    <div class="content">
+                                        <div class="price_box">
+                                            <p class="price">4924.<span>42</span></p>
+                                            <p class="currency">usd</p>
+                                        </div>
+                                        <div class="card_info">
+                                            <p class="part_card_number">.... 3481</p>
+                                            <img alt="" src="img/visa_logos_dark.png" class="card_type">
+                                        </div>
+                                    </div>
+                                    <div class="active_card">
+                                        <div class="card_header">
+                                            <div class="logo"><img alt="logo" src="img/logo.png"> BLACK PEARL CARD</div>
+                                            <p class="balance">$200</p>
+                                        </div>
+                                        <p class="card_number">6551 9809 3223 1567</p>
+                                        <div class="card_footer">
+                                            <div class="ex_date_box">
+                                                <p class="card_name">GOOD THRU</p>
+                                                <p class="ex_date">10/25</p>
+                                            </div>
+                                            <img alt="" src="img/VISA.png" class="cars_type_img">
+                                        </div>
+                                    </div>
+                                    <p class="balance_mobile">Remaining Balance: $200</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="transactions_box">
+                <div class="transactions_content">
+                    <h1 class="title">Transactions</h1>
+                    <div class="row">
+                        <p class="date text_medium">Dec 09 2021</p>
+                        <p class="text_medium return">Sample Return</p>
+                        <p class="text_regular">Settling</p>
+                        <p class="text_bold price_back">$-58.15</p>
+                    </div>
+                    <div class="row">
+                        <p class="date text_medium">Nov 05 2021</p>
+                        <p class="text_medium return">Sample Return</p>
+                        <p class="text_regular">Settling</p>
+                        <p class="text_bold price_back">$-89.05</p>
+                    </div>
+                </div>
+                <button class="see_all">See All Transactions</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="script/splide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var splide = new Splide('.splide', {
+                direction: 'ttb',
+                perPage: 3,
+                isNavigation: false,
+                heightRatio: 1,
+                pagination: false,
+                arrows: false,
+                drag: false,
+                perPage: 1,
+                perMove: 1,
+
+            });
+            splide.mount();
+        });
+
+        var open_card = document.querySelectorAll('.slider_content');
+        [].forEach.call(open_card, function(el) {
+            el.onclick = function(e) {
+                for (var i = 0; i < open_card.length; i++) {
+                    open_card[i].classList.add('hide')
+                    open_card[i].classList.remove('show')
+                    el.classList.remove('hide');
+                }
+                el.classList.toggle('show');
+            }
+        });
+    </script>
+</body></html>
